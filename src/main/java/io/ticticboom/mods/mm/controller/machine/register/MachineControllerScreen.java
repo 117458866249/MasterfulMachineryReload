@@ -26,7 +26,7 @@ public class MachineControllerScreen extends AbstractContainerScreen<MachineCont
 
     @Override
     protected void renderBg(GuiGraphics gfx, float partialTick, int mouseX, int mouseY) {
-        gfx.blit(Ref.UiTextures.GUI_LARGE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
+        gfx.blit(Ref.Textures.GUI_LARGE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
     }
 
     @Override
@@ -36,9 +36,9 @@ public class MachineControllerScreen extends AbstractContainerScreen<MachineCont
 
         // structure formation details
         var isFormed = be.getStructure() != null;
-        gfx.drawWordWrap(this.font, FormattedText.of(isFormed ? "Formed As:" : "Not Formed"), 10, 40, 150, 0xacacac);
+        gfx.drawWordWrap(this.font, FormattedText.of(isFormed ? "§a=[√]=" : "§4=[X]="), 10, 40, 150, 0xacacac);
         if (isFormed) {
-            gfx.drawWordWrap(this.font, FormattedText.of(be.getStructure().name()), 10, 53, 150, 0xacacac);
+            //gfx.drawWordWrap(this.font, FormattedText.of(be.getStructure().name()), 10, 53, 150, 0xacacac);
         }
 
         // recipe processing details
